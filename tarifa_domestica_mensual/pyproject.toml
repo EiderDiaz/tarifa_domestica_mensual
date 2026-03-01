@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "tarifa_domestica_mensual"
+version = "0.0.1"
+description = "Python desktop utility for processing **CFE (Comisi\u00f3n Federal de Electricidad)** monthly domestic electricity bills in Mexico. It extracts data from PDF receipts and populates an Excel quotation template for solar photovoltaic system proposals"
+authors = [
+  { name = "jorge diaz/secom" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["tarifa_domestica_mensual"]
+include = ["pyproject.toml", "tarifa_domestica_mensual/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["tarifa_domestica_mensual"]
+force-sort-within-sections = true
+
